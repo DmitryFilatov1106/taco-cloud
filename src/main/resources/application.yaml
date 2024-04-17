@@ -1,0 +1,28 @@
+server.port: 8080
+
+spring:
+  datasource:
+    generate-unique-name: false
+    name: tacocloud
+  data:
+    rest:
+      base-path: /data-api
+
+logging:
+  level:
+    root: warn
+    org.springframework.security: debug
+
+taco:
+  orders:
+    pageSize: 10
+
+management:
+  endpoint:
+    health:
+      show-details: when_authorized
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include: health, info, beans, conditions, env
